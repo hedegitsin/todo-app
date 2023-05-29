@@ -1,6 +1,5 @@
-<div
-  class="todo-item">
-  <div class="todo-description">
+<div class="todo-item">
+  <div class="todo-description" [routerLink]="['/todos', todoItem.id]">
     {{todoItem.todo}}
   </div>
   <div class="todo-checkbox">

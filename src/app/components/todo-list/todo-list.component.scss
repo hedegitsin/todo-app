@@ -12,6 +12,17 @@
     font-size: 1.25rem;
     border-bottom: 1px solid #ccc;
     background: #fafafa;
+    display: flex;
+    flex-direction: row;
+
+    & span{
+      flex: 1
+    }
+
+    & button{
+      flex: 0;
+      white-space: nowrap;
+    }
   }
 
   & .todo-items-container {

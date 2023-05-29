@@ -1,0 +1,21 @@
+<div class="item-details-container">
+  <span class="go-back-link" [routerLink]="['/todos']">< Back to List</span>
+  <div class="item-details-form">
+    <form [formGroup]="formGroup" (ngSubmit)="upsertTodoItem()">
+      <div class="form-item textarea">
+        <label>What to do?</label>
+        <textarea rows="5" formControlName="todo"></textarea>
+      </div>
+      <div class="form-item">
+        <label>Completed?
+          <input type="checkbox" formControlName="completed">
+        </label>
+      </div>
+      <div class="form-item">
+        <button [disabled]="formGroup.invalid">
+          {{isUpserting ? 'Saving' : 'Save'}}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

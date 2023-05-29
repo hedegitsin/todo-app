@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {TodoListComponent} from "./components/todo-list/todo-list.component";
 import {LoginComponent} from "./components/login/login.component";
 import {AuthenticationGuard} from "./guards/authentication.guard";
+import {TodoItemDetailsComponent} from "./components/todo-item-details/todo-item-details.component";
 
 const routes: Routes = [
   {
@@ -13,6 +14,11 @@ const routes: Routes = [
   {
     path: 'todos',
     component: TodoListComponent,
+    canActivate: [AuthenticationGuard]
+  },
+  {
+    path: 'todos/:id',
+    component: TodoItemDetailsComponent,
     canActivate: [AuthenticationGuard]
   },
   {

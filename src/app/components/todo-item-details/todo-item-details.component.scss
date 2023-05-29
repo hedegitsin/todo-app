@@ -1,0 +1,41 @@
+.item-details-container {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 50px auto 150px auto;
+  overflow: hidden;
+  filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.3));
+  background: #fff;
+
+  & .go-back-link {
+    padding: 6px;
+    cursor: pointer;
+  }
+
+  & .item-details-form {
+    margin-top: 30px;
+
+    & .form-item {
+      padding: 12px 24px;
+
+      &.textarea {
+        & label {
+          display: block;
+          margin-bottom: 6px;
+        }
+
+        & textarea {
+          width: 100%;
+          font-size: 1rem;
+          padding: 10px;
+          border-radius: 10px;
+        }
+      }
+
+      & button {
+        font-size: 1rem;
+        padding: 10px 30px;
+      }
+    }
+  }
+}

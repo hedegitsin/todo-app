@@ -9,13 +9,15 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {LoginComponent} from './components/login/login.component';
 import {AuthenticationInterceptor} from "./interceptors/authentication.interceptor";
+import { TodoItemDetailsComponent } from './components/todo-item-details/todo-item-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoListComponent,
     TodoListItemComponent,
-    LoginComponent
+    LoginComponent,
+    TodoItemDetailsComponent
   ],
   imports: [
     BrowserModule,

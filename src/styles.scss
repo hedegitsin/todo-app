@@ -1,12 +1,11 @@
-html, body{
+html, body {
   padding: 0;
   margin: 0;
   font-size: 16px;
-  & *{
+
+  & * {
     box-sizing: border-box;
+    font-family: "Roboto Light", sans-serif;
   }
 }
 
-body{
-  font-family: "Roboto Light", sans-serif;
-}
