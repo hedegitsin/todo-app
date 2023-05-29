@@ -1,5 +1,10 @@
 <div class="header" *ngIf="currentUser">
-  {{currentUser.firstName}} {{currentUser.lastName}}
+  <div class="now">
+    {{now | async | date : 'dd.MM.yyyy HH:mm:ss'}}
+  </div>
+  <div class="avatar" [title]="currentUser.firstName + ' ' + currentUser.lastName">
+    {{[currentUser.firstName, currentUser.lastName] | initialLettersUpperCase}}
+  </div>
   <button (click)="logout()">Logout</button>
 </div>
 <router-outlet></router-outlet>

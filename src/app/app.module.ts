@@ -10,6 +10,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {LoginComponent} from './components/login/login.component';
 import {AuthenticationInterceptor} from "./interceptors/authentication.interceptor";
 import { TodoItemDetailsComponent } from './components/todo-item-details/todo-item-details.component';
+import { InitialLettersUpperCasePipe } from './pipes/initial-letters-upper-case.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TodoItemDetailsComponent } from './components/todo-item-details/todo-it
     TodoListComponent,
     TodoListItemComponent,
     LoginComponent,
-    TodoItemDetailsComponent
+    TodoItemDetailsComponent,
+    InitialLettersUpperCasePipe
   ],
   imports: [
     BrowserModule,
