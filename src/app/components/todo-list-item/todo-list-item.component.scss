@@ -1,0 +1,38 @@
+:host{
+  display: block;
+  &:not(:last-of-type){
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+.todo-item{
+  padding: 12px 24px;
+  cursor: pointer;
+  color: #666;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+   &:hover{
+     background: #fafafa;
+   }
+
+  & .todo-description{
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  & .todo-checkbox{
+    flex: 0;
+
+    & input[type=checkbox]
+    {
+      transform: scale(1.5);
+      padding: 10px;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div
+  class="todo-item">
+  <div class="todo-description">
+    {{todoItem.todo}}
+  </div>
+  <div class="todo-checkbox">
+    <input
+      type="checkbox"
+      [(ngModel)]="todoItem.completed"
+      (ngModelChange)="toggleItemCompletion()"
+    >
+  </div>
+</div>
