@@ -3,7 +3,7 @@
   border: 1px solid #ccc;
   border-radius: 10px;
   max-width: 500px;
-  margin: 50px auto 0 auto;
+  margin: 50px auto 150px auto;
   overflow: hidden;
   filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.3));
 
@@ -18,17 +18,15 @@
     background: #fff;
 
     & .todo-category {
+      padding-bottom: 24px;
 
       & .category-title{
         font-size: 1.1rem;
         padding: 12px 24px;
       }
 
-      &:first-of-type{
-        padding-bottom: 24px;
-      }
-
       &:last-of-type{
+        padding-top: 24px;
         border-top: 1px solid #ccc;
       }
 

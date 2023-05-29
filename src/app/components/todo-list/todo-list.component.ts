@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {TodoItem} from "../../models/todo-item.model";
+import {HttpClient} from "@angular/common/http";
+import {TodoApiListResponse} from "../../models/todo-api-list-response.model";
 
 
 @Component({
@@ -7,76 +9,21 @@ import {TodoItem} from "../../models/todo-item.model";
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss']
 })
-export class TodoListComponent implements OnInit{
+export class TodoListComponent implements OnInit {
 
-  private todoList: Array<TodoItem> = [
-    {
-      id: 1,
-      todo: "My first TODO Item",
-      completed: false,
-      userId: 1
-    },
-    {
-      id: 2,
-      todo: "My second TODO Item",
-      completed: false,
-      userId: 1
-    },
-    {
-      id: 3,
-      todo: "My third TODO Item",
-      completed: false,
-      userId: 1
-    },
-    {
-      id: 4,
-      todo: "My fourth TODO Item",
-      completed: false,
-      userId: 1
-    },
-    {
-      id: 5,
-      todo: "My fifth TODO Item",
-      completed: false,
-      userId: 1
-    },
-    {
-      id: 6,
-      todo: "My sixth TODO Item",
-      completed: false,
-      userId: 1
-    },
-    {
-      id: 7,
-      todo: "My seventh TODO Item",
-      completed: false,
-      userId: 1
-    },
-    {
-      id: 8,
-      todo: "My eighth TODO Item",
-      completed: false,
-      userId: 1
-    },
-    {
-      id: 9,
-      todo: "My ninth TODO Item",
-      completed: false,
-      userId: 1
-    },
-    {
-      id: 10,
-      todo: "My tenth TODO Item",
-      completed: false,
-      userId: 1
-    }
-  ]
+  private httpClient = inject(HttpClient);
 
+  private todoList: Array<TodoItem> = [];
   openTodoList: Array<TodoItem> = [];
   completedTodoList: Array<TodoItem> = [];
 
   ngOnInit(): void {
-    this.setFilteredTodoLists();
+    this.httpClient.get<TodoApiListResponse>('https://dummyjson.com/todos').subscribe(
+      (result) => {
+        this.todoList = result.todos;
+        this.setFilteredTodoLists();
+      }
+    )
   }
 
   private filterTodoListByCompletion(isCompleted: boolean): Array<TodoItem> {
