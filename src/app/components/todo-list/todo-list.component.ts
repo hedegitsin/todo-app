@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TodoItem} from "../../models/todo-item.model";
 
 
@@ -7,9 +7,9 @@ import {TodoItem} from "../../models/todo-item.model";
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss']
 })
-export class TodoListComponent {
+export class TodoListComponent implements OnInit{
 
-  todoList: Array<TodoItem> = [
+  private todoList: Array<TodoItem> = [
     {
       id: 1,
       todo: "My first TODO Item",
@@ -72,24 +72,23 @@ export class TodoListComponent {
     }
   ]
 
+  openTodoList: Array<TodoItem> = [];
+  completedTodoList: Array<TodoItem> = [];
+
+  ngOnInit(): void {
+    this.setFilteredTodoLists();
+  }
+
+  private filterTodoListByCompletion(isCompleted: boolean): Array<TodoItem> {
+    return this.todoList.filter(item => item.completed === isCompleted);
+  }
+
+  private setFilteredTodoLists() {
+    this.openTodoList = this.filterTodoListByCompletion(false);
+    this.completedTodoList = this.filterTodoListByCompletion(true);
+  }
+
   onTodoItemChecked(todoItem: TodoItem) {
-    // if(todoItem.completed){
-    //   this.todoList = this.todoList.filter(item => item.id !== todoItem.id);
-    // }
+    this.setFilteredTodoLists();
   }
-
-  private filterItemsByCompletion(isCompleted: boolean): Array<TodoItem> {
-    return this.todoList.filter(item => item.completed === isCompleted)
-  }
-
-  getOpenTodos(): Array<TodoItem> {
-    console.log("getOpenTodos");
-    return this.filterItemsByCompletion(false);
-  }
-
-  getCompletedTodos(): Array<TodoItem> {
-    console.log("getCompletedTodos");
-    return this.filterItemsByCompletion(true);
-  }
-
 }
