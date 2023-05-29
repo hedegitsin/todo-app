@@ -1,0 +1,43 @@
+.login-container{
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .login-form{
+
+    width: 350px;
+
+    & .username, .password{
+      margin-bottom: 15px;
+
+      & input{
+        padding: 6px 12px;
+        width: 100%;
+      }
+    }
+
+    & .login-button{
+      & button{
+        width: 100%;
+        padding: 6px 12px;
+        font-size: 1.1rem;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+
+    & .alert-message{
+      text-align: center;
+      margin-top: 24px;
+      background: #ffcece;
+      color: #4b3939;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+
+  }
+
+
+}

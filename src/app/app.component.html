@@ -1,1 +1,5 @@
+<div class="header" *ngIf="currentUser">
+  {{currentUser.firstName}} {{currentUser.lastName}}
+  <button (click)="logout()">Logout</button>
+</div>
 <router-outlet></router-outlet>
