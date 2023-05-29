@@ -21,4 +21,9 @@ export class AppComponent{
   logout(){
     this.authenticationService.logout();
   }
+
+  getInitialLettersUpperCase(values: Array<string>){
+    console.log('getInitialLettersUpperCase');
+    return values.map(v => v.substring(0,1).toLocaleUpperCase()).join('');
+  }
 }
