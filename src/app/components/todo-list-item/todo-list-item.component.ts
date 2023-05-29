@@ -12,9 +12,9 @@ export class TodoListItemComponent {
   todoItem!: TodoItem;
 
   @Output()
-  onItemChecked: EventEmitter<TodoItem> = new EventEmitter();
+  onItemChecked = new EventEmitter<TodoItem>();
 
-  toggleItemCompletion(){
+  toggleItemCompletion() {
     this.onItemChecked.emit(this.todoItem);
   }
 

@@ -1,24 +1,42 @@
 
-.todo-list{
+.todo-list {
   border: 1px solid #ccc;
   border-radius: 10px;
   max-width: 500px;
   margin: 50px auto 0 auto;
   overflow: hidden;
-  filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.3));
+  filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.3));
 
-  & .todo-list-header{
+  & .todo-list-header {
     padding: 12px 24px;
     font-size: 1.25rem;
     border-bottom: 1px solid #ccc;
     background: #fafafa;
   }
 
-  & .todo-items-container{
+  & .todo-items-container {
     background: #fff;
+
+    & .todo-category {
+
+      & .category-title{
+        font-size: 1.1rem;
+        padding: 12px 24px;
+      }
+
+      &:first-of-type{
+        padding-bottom: 24px;
+      }
+
+      &:last-of-type{
+        border-top: 1px solid #ccc;
+      }
+
+    }
+
   }
 
-  & .no-todos-message{
+  & .no-todos-message {
     background: #fff7d0;
     color: #423c1e;
     padding: 12px 24px;

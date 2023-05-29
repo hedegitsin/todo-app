@@ -1,14 +1,30 @@
 <div class="todo-list">
   <div class="todo-list-header">
-    My ToDo List
+    My TODO List
   </div>
   <div class="todo-items-container">
-    <app-todo-list-item
-      *ngFor="let todoItem of todoList"
-      [todoItem]="todoItem"
-      (onItemChecked)="onTodoItemChecked($event)"
-    >
-    </app-todo-list-item>
-    <div class="no-todos-message" *ngIf="todoList.length === 0">You have no ToDo items!</div>
+
+    <!--  Open TODOs  -->
+    <div class="todo-category">
+      <div class="category-title">Open</div>
+      <app-todo-list-item
+        *ngFor="let todoItem of getOpenTodos()"
+        [todoItem]="todoItem"
+        (onItemChecked)="onTodoItemChecked($event)"
+      >
+      </app-todo-list-item>
+      <div class="no-todos-message" *ngIf="getOpenTodos().length === 0">You have no open TODO items!</div>
+    </div>
+    <!--  Completed TODOs  -->
+    <div class="todo-category">
+      <div class="category-title">Completed</div>
+      <app-todo-list-item
+        *ngFor="let todoItem of getCompletedTodos()"
+        [todoItem]="todoItem"
+        (onItemChecked)="onTodoItemChecked($event)"
+      >
+      </app-todo-list-item>
+      <div class="no-todos-message" *ngIf="getCompletedTodos().length === 0">You have no completed TODO items!</div>
+    </div>
   </div>
 </div>
