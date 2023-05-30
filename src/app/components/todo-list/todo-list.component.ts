@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {TodoItem} from "../../models/todo-item.model";
 
 
@@ -7,20 +7,18 @@ import {TodoItem} from "../../models/todo-item.model";
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss']
 })
-export class TodoListComponent implements OnInit{
+export class TodoListComponent{
 
   private _todoList: Array<TodoItem> = [];
   @Input()
   set todoList(value: Array<TodoItem>) {
     this._todoList = value;
+    this.setFilteredTodoLists();
   }
 
   openTodoList: Array<TodoItem> = [];
   completedTodoList: Array<TodoItem> = [];
 
-  ngOnInit(): void {
-    this.setFilteredTodoLists();
-  }
 
   private filterTodoListByCompletion(isCompleted: boolean): Array<TodoItem> {
     return this._todoList.filter(item => item.completed === isCompleted);
