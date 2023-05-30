@@ -1,1 +1,24 @@
-<router-outlet></router-outlet>
+<div class="todo-list">
+  <div class="todo-list-header">
+    My TODO List
+  </div>
+  <div class="todo-items-container">
+    <div
+      class="todo-item"
+      *ngFor="let todoItem of todoList"
+    >
+      <div class="todo-description">
+        {{todoItem.todo}}
+      </div>
+      <div class="todo-checkbox">
+        <input
+          type="checkbox"
+          [(ngModel)]="todoItem.completed"
+          (ngModelChange)="onTodoItemChecked(todoItem)"
+        >
+      </div>
+    </div>
+
+    <div class="no-todos-message" *ngIf="todoList.length === 0">You have no TODO items!</div>
+  </div>
+</div>
