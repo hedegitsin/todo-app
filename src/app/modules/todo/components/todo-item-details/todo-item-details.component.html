@@ -1,5 +1,5 @@
 <div class="item-details-container">
-  <span class="go-back-link" [routerLink]="['/todos']">< Back to List</span>
+  <button class="go-back-link sm" [routerLink]="['/todos']">< Back to List</button>
   <div class="item-details-form">
     <form [formGroup]="formGroup" (ngSubmit)="upsertTodoItem()">
       <div class="form-item textarea">
@@ -12,7 +12,7 @@
         </label>
       </div>
       <div class="form-item">
-        <button [disabled]="formGroup.invalid">
+        <button class="pink" [disabled]="formGroup.invalid">
           {{isUpserting ? 'Saving' : 'Save'}}
         </button>
       </div>

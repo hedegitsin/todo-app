@@ -5,6 +5,6 @@
   <div class="avatar" [title]="currentUser.firstName + ' ' + currentUser.lastName">
     {{[currentUser.firstName, currentUser.lastName] | initialLettersUpperCase}}
   </div>
-  <button (click)="logout()">Logout</button>
+  <button class="logout-button sm" (click)="logout()">👋</button>
 </div>
 <router-outlet></router-outlet>

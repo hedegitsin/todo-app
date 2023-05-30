@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {InitialLettersUpperCasePipe} from "./pipes/initial-letters-upper-case.pipe";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
@@ -16,11 +16,13 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
     // Exported Declarations
     InitialLettersUpperCasePipe,
+    NgOptimizedImage
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    NgOptimizedImage
   ]
 })
 export class SharedModule { }

@@ -1,14 +1,18 @@
 <div class="login-container">
   <div class="login-form">
+    <div class="login-logo">
+      <img [ngSrc]="'/assets/images/angular.png'" width="75" height="75" priority="true" alt="Logo">
+      <div>Angular Jumpstart</div>
+    </div>
     <form [formGroup]="loginFormGroup" (ngSubmit)="onLoginFormSubmit()">
       <div class="username">
-        <input type="text" formControlName="email">
+        <input type="text" class="fw" formControlName="email">
       </div>
       <div class="password">
-        <input type="password" formControlName="password">
+        <input type="password" class="fw" formControlName="password">
       </div>
       <div class="login-button">
-        <button type="submit">
+        <button class="fw" type="submit">
           Login
         </button>
       </div>
