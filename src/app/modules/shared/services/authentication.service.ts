@@ -55,7 +55,7 @@ export class AuthenticationService {
   logout() {
     delete this._currentUser;
     localStorage.removeItem(this.LOCALSTORAGE_USER_KEY);
-    this.router.navigate(["/login"])
+    this.router.navigate(["/auth/login"])
   }
 
 }

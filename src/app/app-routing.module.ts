@@ -1,9 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import {TodoListComponent} from "./components/todo-list/todo-list.component";
-import {LoginComponent} from "./components/login/login.component";
-import {AuthenticationGuard} from "./guards/authentication.guard";
-import {TodoItemDetailsComponent} from "./components/todo-item-details/todo-item-details.component";
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
   {
@@ -13,17 +9,11 @@ const routes: Routes = [
   },
   {
     path: 'todos',
-    component: TodoListComponent,
-    canActivate: [AuthenticationGuard]
+    loadChildren: () => import('./modules/todo/todo.module').then(m => m.TodoModule)
   },
   {
-    path: 'todos/:id',
-    component: TodoItemDetailsComponent,
-    canActivate: [AuthenticationGuard]
-  },
-  {
-    path: 'login',
-    component: LoginComponent
+    path: 'auth',
+    loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule)
   }
 ];
 

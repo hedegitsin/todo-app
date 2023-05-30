@@ -1,9 +1,8 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {TodoItem} from "../../models/todo-item.model";
-import {TodoApiService} from "../../services/todo-api.service";
+import {ActivatedRoute} from "@angular/router";
+import {TodoApiService} from "../../../shared/services/todo-api.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AuthenticationService} from "../../services/authentication.service";
+import {AuthenticationService} from "../../../shared/services/authentication.service";
 
 @Component({
   selector: 'app-todo-item-details',

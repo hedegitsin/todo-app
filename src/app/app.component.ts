@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {AuthenticationService} from "./services/authentication.service";
+import {AuthenticationService} from "./modules/shared/services/authentication.service";
 import {map, timer} from "rxjs";
 
 @Component({

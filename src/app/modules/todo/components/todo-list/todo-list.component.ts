@@ -1,8 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {TodoItem} from "../../models/todo-item.model";
-import {HttpClient} from "@angular/common/http";
-import {TodoApiListResponse} from "../../models/todo-api-list-response.model";
-import {TodoApiService} from "../../services/todo-api.service";
+import {TodoItem} from "../../../shared/models/todo-item.model";
+import {TodoApiService} from "../../../shared/services/todo-api.service";
 
 
 @Component({
