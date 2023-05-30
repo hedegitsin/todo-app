@@ -16,24 +16,6 @@
 
   & .todo-items-container {
     background: #fff;
-
-    & .todo-category {
-
-      & .category-title{
-        font-size: 1.1rem;
-        padding: 12px 24px;
-      }
-
-      &:first-of-type{
-        padding-bottom: 24px;
-      }
-
-      &:last-of-type{
-        border-top: 1px solid #ccc;
-      }
-
-    }
-
   }
 
   & .no-todos-message {
