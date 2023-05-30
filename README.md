@@ -8,6 +8,12 @@ Run `npm install` to install all the dependencies. (Check `node_modules` directo
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+One of the credentials for loggin in is:
+
+```
+Username: atuny0
+Password: 9uQFF1Lh
+```
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
