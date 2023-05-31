@@ -19,7 +19,7 @@ export class TodoListComponent implements OnInit {
   completedTodoList: Array<TodoItem> = [];
 
   ngOnInit(): void {
-    this.todoApiService.getAllTodos().subscribe(
+    this.todoApiService.getAll().subscribe(
       (result) => {
         this.todoList = result.todos;
         this.setFilteredTodoLists();
@@ -37,7 +37,7 @@ export class TodoListComponent implements OnInit {
   }
 
   onTodoItemChecked(todoItem: TodoItem) {
-    this.todoApiService.updateTodo(todoItem).subscribe({
+    this.todoApiService.upsert(todoItem).subscribe({
       next: () => this.setFilteredTodoLists()
     })
   }
