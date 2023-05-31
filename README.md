@@ -1,8 +1,8 @@
 # TodoApp
 
-![img.png](docs/img.png)
+![login.png](docs/login.png)
 
-![img_1.png](docs/img_1.png)
+![list.png](docs/list.png)
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
