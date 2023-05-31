@@ -1,5 +1,7 @@
-import {Component, Input} from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
 import {TodoItem} from "../../models/todo-item.model";
+import {TodoApiListResponse} from "../../models/todo-api-list-response.model";
+import {HttpClient} from "@angular/common/http";
 
 
 @Component({
@@ -8,6 +10,8 @@ import {TodoItem} from "../../models/todo-item.model";
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent {
+
+  private httpClient = inject(HttpClient);
 
   private _todoList: Array<TodoItem> = [];
   @Input()
@@ -29,6 +33,14 @@ export class TodoListComponent {
   }
 
   onTodoItemChecked(todoItem: TodoItem) {
-    this.setFilteredTodoLists();
+    this.httpClient.put<TodoApiListResponse>(
+      `https://dummyjson.com/todos/${todoItem.id}`,
+      JSON.stringify(todoItem)
+    ).subscribe(
+      (result) => {
+        this.setFilteredTodoLists();
+      }
+    )
+
   }
 }
