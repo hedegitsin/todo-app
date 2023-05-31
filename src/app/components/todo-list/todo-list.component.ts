@@ -37,6 +37,8 @@ export class TodoListComponent implements OnInit {
   }
 
   onTodoItemChecked(todoItem: TodoItem) {
-    this.setFilteredTodoLists();
+    this.todoApiService.upsert(todoItem).subscribe({
+      next: () => this.setFilteredTodoLists()
+    })
   }
 }
